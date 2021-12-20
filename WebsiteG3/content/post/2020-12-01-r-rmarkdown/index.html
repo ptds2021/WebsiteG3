@@ -9,45 +9,29 @@ tags: ["olympics", "plot", "regression"]
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
-<div id="olympics" class="section level1">
-<h1>Olympics</h1>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
-<div id="table" class="section level2">
-<h2>Table</h2>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span style="display:block;" id="fig:pie"></span>
-<img src="{{< blogdown/postref >}}index_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-<p class="caption">
-Figure 1: A fancy pie chart.
-</p>
-</div>
-</div>
-<div id="barplot" class="section level2">
-<h2>Barplot</h2>
-</div>
-</div>
+<p>##Introduction</p>
+<p>Since our team members are all interested by sport and recently Tokyo’s Olympics Games were playing, we found interesting to provide a new tool to easily do some research on the Olympics. So, our project is about the different summer Olympics Games since 1896. Since more and more sport are added every new edition, we found interesting to help people to facilitate their research.</p>
+<p>Then our main goal is to offer people a tool to help them find some information about an Olympics Game edition. We hope people will be able to use our tool to find, for example, who won the most medals in 2004 in swimming or how many medals the US won in 1994 in athletics. In order to provide this new tool, we will use R and create a shiny app which will have multiple filters to simplify the research. We hope that our app might help specialized people, such as sport journalist or sport passionate persons.</p>
+<p>##Data</p>
+<p>We found our dataset on Kaggle. The dataset we decided to use is the Olympic Sports and Medals since 1896 to 2014. We mainly focus on the summer Olympics since they were the original games, and the winter ones only appear in 1924.</p>
+<p>Our data has 31178 lines and 9 columns. The columns are the following: Event, discipline, athlete, country, gender, category, medal, latitude, and longitude.</p>
+<p>Event is the year and the place where the Olympics was playing.
+discipline is the discipline of sport such as swimming or athletics.
+athlete is for the name and surname of the athletes who won a medal.
+category is the category in which the athletes compete.
+country and gender are for the country of the athlete and his/her gender.
+medal is the type of medal won by the competitor.
+latitude and longitude are the geographic coordinate of the country.</p>
+<p>We had to add them manually for each country to help us to fit them on a map. We had few NAs in our data that we removed to avoid any surprise once we start to use the dataset in our package. We used the function drop_NA, then once a NA was found, the whole line was deleted.</p>
+<p>##Team</p>
+<p>Our team is composed of 5 Master’s students in HEC Lausanne in Business Analytics orientation. Sharing the same ambition, we all have chosen the course of Programming Tools in Data Science given by the professor Samuel Orso.</p>
+<p>Nada Abdulghafor</p>
+<p>Happy to be at the end of my master and working in parallel of my classes, I’m excited to see what comes next by exploring new opportunities in the 100% working world. I’m also keen to know that I will be freer to organize my routine with things I really want to achieve such as opening my startup, focus on sport and have free moment to do pastry (which is by the way one of my hobbies).</p>
+<p>Waren Lugon</p>
+<p>As said before, I’m a master’s student in Management and orientation of Business Analytics. I’m living in Geneva and then I personally found the online course quite practical. Just as Nada, I’m happy arriving at the end of my master to start to focus on my personal project. Since 2017, I invested in cryptocurrency and NFTs market, and in the future my goal is to mainly work (independently) in this domain. Beside this, I like to travel and discover new culture.</p>
+<p>Sarah Ismail</p>
+<p>As Nada, I’m working at the airport beside my master, and it motivates me to quickly finish my cursus to start my professional career. When I have free time, I love to spend time with my family and my friends. I also like to take a walk near my place in Geneva, because there are many quiet spots which I found relaxing.</p>
+<p>Enzo Beijer</p>
+<p>Once I finished my bachelor’s in economy and management in Geneva, I started an internship at Ernst&amp;Young. I like to work there I found myself disadvantage in comparison to my other colleagues, then I decided to start my master to help to evolve in my career. Beside I like to practice sport, and I’m trying to go to the fitness when I have free time.</p>
+<p>Labinot Ismaili</p>
+<p>My name is Labinot, I am a Master student in Management, orientation Business Analytics. If I am not working or studying, I am either wild camping or surfing. I love everything that is linked to nature, and I really like spending my free time on discovering new landscapes, traveling.</p>
